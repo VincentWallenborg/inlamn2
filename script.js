@@ -166,6 +166,10 @@ function createRecepieCard(title, timeA, desc, pic) {
     }
     //tar bort kortet
     function removeCard () {
+        const index = recipes.findIndex(recipe => recipe.title === title);
+        if (index !== -1) {
+            recipes.splice(index, 1);
+        }
         newDiv.remove();
     }
 
